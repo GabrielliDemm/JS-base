@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterando estilo com o DOM</title>
+
+<!-- CSS interno-->
+ <style>
+    #minhaDiv {
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        margin-top: 20px;
+    }
+ </style>
+    
+</head>
+<body>
+    <!--Botão para mudar a cor da div-->
+    <button id="meuBotão">Mudar cor</button>
+
+    <!--Div que terá sua cor de fundo alterada via DOM no JS-->
+    <div id="minhaDiv"></div>
+
+    <!--JS interno-->
+    <script>
+        // seleção (Botão e Div) usando DOM no JS
+        const Botão = document.querySelector ('#meuBotão');
+        const div = document.querySelector ('#minhaDiv');
+
+        //Adição de eventos (Clique) para monitorar
+        Botão.addEventListener('click',() => {
+            if (div.style.backgroundColor === 'black') {
+                div.style.backgroundColor = 'darkred';
+            } else {
+                div.style.backgroundColor = 'black';
+            }
+        })
+    </script>
+    
+</body>
+</html>

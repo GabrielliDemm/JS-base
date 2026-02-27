@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <button id="btn">Clique Aqui °>°</button>
+
+    <p id="txt">Contador: <span id="contador">0</span></p>
+
+    <script>
+        const button = document.getElementById('btn');
+        const contador = document.getElementById('contador');
+        let count = 0;
+
+        button.addEventListener('click', function() {
+            count++
+            contador.textContent = count;
+            if (count % 2 == 0) {
+                contador.style.color = 'green';
+            } else {
+                contador.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
