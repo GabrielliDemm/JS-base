@@ -50,8 +50,42 @@
   <script>
 
 
-    // 1ª Digitação (Resolva aqui o exercício)
+    const start = document.getElementById('startButton');
+    const pause = document.getElementById('pauseButton');
+    const reset = document.getElementById('resetButton');
+    const timer = document.getElementById('timer');
+    let count = 0;
+    let timerId;
 
+    start.addEventListener('click', startTimer);
+
+      function startTimer () {
+        if (timerId) {
+          return
+        }
+        timerId = setInterval(updateTimer, 1000);
+      };
+      
+      function updateTimer() {
+        count++;
+        timer.textContent = count;
+      };
+
+    pause.addEventListener('click', pauseTimer);
+
+      function pauseTimer () {
+        clearInterval(timerId);
+        timerId = null;
+      };
+
+    reset.addEventListener('click', resetTimer);
+
+      function resetTimer () {
+        pauseTimer();
+        count = 0;
+        timerId = null;
+        timer.textContent = count;
+      };
 
   </script>
 </body>
